@@ -7,6 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE10 - Youth Excellence Center</title>
+	<link rel="icon" type="image/png" href="/favicon.png" />
+	<meta property="og:title" content="THE10 - Youth Excellence Center" />
+	<meta property="og:description" content="Fostering excellence in social entrepreneurship through Yoga and Tech." />
+	<meta property="og:image" content="/Logo.png" />
+	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
         :root {
             --gold: #F2B705;
@@ -134,6 +139,37 @@
         </div>
     </section>
 
+	<section class="contact-form-section" id="contact-us">
+		<h2>Connect With Us</h2>
+		<div class="form-container">
+			<form action="/success" method="POST">
+				<div class="input-group">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" required placeholder="Your Name">
+				</div>
+				<div class="input-group">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required placeholder="Your Email">
+				</div>
+				<div class="input-group">
+					<label for="message">How can we help?</label>
+					<textarea id="message" name="message" rows="4" required placeholder="Tell us about your interest in THE10..."></textarea>
+				</div>
+				<div class="cf-turnstile" data-sitekey="0x4AAAAAACLX_sQLIBQnOnbs"></div>
+				<button type="submit" class="submit-btn">Send Message</button>
+			</form>
+		</div>
+	</section>
+
+	<style>
+		.contact-form-section { padding: 80px 5%; background: var(--white); text-align: center; }
+		.form-container { max-width: 600px; margin: 0 auto; text-align: left; background: var(--light-gray); padding: 30px; border-radius: 15px; }
+		.input-group { margin-bottom: 20px; }
+		.input-group label { display: block; font-weight: bold; color: var(--navy); margin-bottom: 5px; }
+		.input-group input, .input-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
+		.submit-btn { background: var(--navy); color: var(--gold); border: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1rem; }
+		.submit-btn:hover { background: var(--blue); color: white; }
+	</style>
     <footer>
         <div class="footer-grid">
             <div class="footer-section">
