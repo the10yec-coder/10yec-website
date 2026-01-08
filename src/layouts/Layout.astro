@@ -1,0 +1,59 @@
+---
+// This is the "Frontmatter" where you can add logic later
+const { title = "THE10 - Youth Excellence Center" } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <style is:global>
+        :root {
+            --gold: #F2B705; --blue: #2D89C8; --navy: #0D47A1;
+            --white: #ffffff; --light-gray: #f4f4f4;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { line-height: 1.6; color: #333; scroll-behavior: smooth; }
+        
+        nav { background: var(--white); padding: 0.5rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo-container img { height: 60px; width: auto; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { text-decoration: none; color: var(--navy); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
+        
+        footer { background: #081c3d; color: white; padding: 60px 5% 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .footer-section h4 { color: var(--gold); margin-bottom: 20px; text-transform: uppercase; }
+        @media (max-width: 768px) { nav { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <img src="/Logo.png" alt="THE10 YEC Logo">
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#why">Our Purpose</a></li>
+            <li><a href="#programs">Pillars</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <slot /> <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Venue</h4>
+                <p><strong>The 10YEC Ranch</strong></p>
+                <p>7600 Cottonwood St, Frisco, TX</p>
+            </div>
+            <div class="footer-section">
+                <h4>Get In Touch</h4>
+                <p>Phone: 408-390-2871</p>
+                <p>the10yec@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
